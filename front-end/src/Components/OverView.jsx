@@ -15,7 +15,7 @@ function OverView() {
 
     async function showUser() {
         try {
-            const res = await axios.get("http://localhost:3000/overview", { withCredentials: true });
+            const res = await axios.get("https://assignmenthrdashboard.onrender.com/overview", { withCredentials: true });
             const newUser = res.data.msg;
             setUser(newUser);
         } catch (error) {
@@ -25,7 +25,7 @@ function OverView() {
     }
 
     async function clearCookies() {
-        const res = await axios.get("http://localhost:3000/logout", { withCredentials: true });
+        const res = await axios.get("https://assignmenthrdashboard.onrender.com/logout", { withCredentials: true });
         setUser('failed');
         setIsLoggedIn(false);
         alert("Logged Out");
