@@ -5,7 +5,7 @@ function SideBar() {
   
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:3000/logout", {
+      const response = await fetch("https://assignmenthrdashboard.onrender.com/logout", {
         method: "GET",
         credentials: "include", // Include cookies for the request
       });
