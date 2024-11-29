@@ -36,7 +36,7 @@ mongoose.connect(uri).then(() => {
 app.get("/getData", async (req, res) => {
     
         try {
-            const decode = jwt.verify(token, secret_key);
+            
             const data = await PeopleModel.find();
             console.log("sending data to frontEnd");
             res.json(data);
