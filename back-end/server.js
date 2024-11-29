@@ -34,10 +34,7 @@ mongoose.connect(uri).then(() => {
 })
 
 app.get("/getData", async (req, res) => {
-    const token =  req.cookies.myToken;
     
-    
-    if (token) {
         try {
             const decode = jwt.verify(token, secret_key);
             const data = await PeopleModel.find();
@@ -47,13 +44,7 @@ app.get("/getData", async (req, res) => {
         } catch (error) {
             console.log(error);
         }
-
-
-        
-    }
-    else {
-        res.json({message:'failed'});
-    }
+    
 
 
 })
