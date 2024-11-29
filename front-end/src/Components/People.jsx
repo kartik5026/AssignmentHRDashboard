@@ -26,16 +26,13 @@ function People() {
 
     async function fetchDataFromBackend() {
         try {
-            const res = await axios.get("https://assignmenthrdashboard.onrender.com/getData", {
+            const res = await axios.get("http://localhost:3000/getData", {
                 withCredentials: true,
             });
             const userData = res.data;
-            if (userData.message === "failed") {
-                setUsers([]);
-            } else {
+            
                 setTotalUsers(userData.length);
                 setUsers(userData);
-            }
         } catch (error) {
             console.error("Error fetching data:", error);
             setUsers([]);
