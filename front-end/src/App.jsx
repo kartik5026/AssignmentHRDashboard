@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/overview", {
+        const response = await axios.get("https://assignmenthrdashboard.onrender.com/overview", {
           withCredentials: true,
         });
         if (response.data.msg !== "failed") {
