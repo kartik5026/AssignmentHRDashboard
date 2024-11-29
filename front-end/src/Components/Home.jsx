@@ -18,7 +18,7 @@ function Home({ setAuth }) {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/login",
+        "https://assignmenthrdashboard.onrender.com/login",
         { username, password },
         { withCredentials: true }
       );
