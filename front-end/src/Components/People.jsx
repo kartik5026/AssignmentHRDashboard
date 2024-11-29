@@ -26,7 +26,7 @@ function People() {
 
     async function fetchDataFromBackend() {
         try {
-            const res = await axios.get("http://localhost:3000/getData", {
+            const res = await axios.get("https://assignmenthrdashboard.onrender.com/getData", {
                 withCredentials: true,
             });
             const userData = res.data;
