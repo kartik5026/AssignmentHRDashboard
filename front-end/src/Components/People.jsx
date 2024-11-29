@@ -26,7 +26,7 @@ function People() {
 
     async function fetchDataFromBackend() {
         try {
-            const res = await axios.get("http://localhost:3000/getData", {
+            const res = await axios.get("https://assignmenthrdashboard.onrender.com/getData", {
                 withCredentials: true,
             });
             const userData = res.data;
@@ -44,7 +44,7 @@ function People() {
 
     async function deleteUser(username) {
         try {
-            await axios.post("http://localhost:3000/delete", { username });
+            await axios.post("https://assignmenthrdashboard.onrender.com/delete", { username });
             setUsers((prevUsers) => prevUsers.filter(user => user.first_name !== username)); // Remove the deleted user from the state
         } catch (error) {
             console.error("Error deleting user:", error);
@@ -53,7 +53,7 @@ function People() {
 
     async function handleChange(e) {
         const val = e.target.value;
-        const res = await axios.post("http://localhost:3000/search", { val });
+        const res = await axios.post("https://assignmenthrdashboard.onrender.com/search", { val });
         const foundUsers = await res.data;
         if (foundUsers.length > 0) {
             setUsers(foundUsers);
