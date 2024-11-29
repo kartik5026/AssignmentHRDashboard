@@ -12,7 +12,7 @@ const app = express();
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'https://assignment-hr-dashboard.vercel.app/',
+    origin: 'https://assignment-hr-dashboard.vercel.app',
     credentials:true
 
 }))
